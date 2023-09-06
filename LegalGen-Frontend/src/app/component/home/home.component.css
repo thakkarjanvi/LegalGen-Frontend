@@ -1,0 +1,56 @@
+.container{
+  height: 100vh;
+  width: 100vw;
+  background-color: #0A004D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content img{
+  height: 100px;
+  width: 150px;
+}
+
+.main-content p{
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.main-content small{
+  color: white;
+  opacity: 0.4;
+  margin-bottom: 20px;
+}
+
+.main-content #login-btn,#signup-btn{
+  color: white;
+  background-color: #26a700;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
+  width: 75%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.main-content #login-btn:hover,#signup-btn:hover{
+  opacity: 0.8;
+}
+
+.main-content #signup-btn{
+  background-color: #0A004D;
+  border: 1px solid white;
+}
+
+h3{
+  margin-top: 0%;
+}
