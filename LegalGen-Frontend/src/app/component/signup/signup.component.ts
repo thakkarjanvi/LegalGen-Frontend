@@ -38,6 +38,7 @@ export class SignupComponent implements OnInit {
       this.authService.signup(user).subscribe(
         (response) => {
           console.log('Signup successful:', response);
+          alert("Signup Successful!")
           this.router.navigate(['/login']);
         },
         (error) => {
@@ -46,5 +47,6 @@ export class SignupComponent implements OnInit {
         }
       );
     }
-  }  
+  }
+  
 }
