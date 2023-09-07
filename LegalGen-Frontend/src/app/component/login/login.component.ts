@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit{
     private fb: FormBuilder,
      private authService: AuthService,
      private router : Router,
+     
      ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -40,7 +41,11 @@ export class LoginComponent implements OnInit{
         (response) => {
           // Authentication successful
           console.log('Login successful');
-          alert("Login Successfull");
+          
+          // Store user data in localStorage
+          this.authService.setUserData(response);
+
+        //  alert("Login Succesful!");
           this.router.navigate(['/']);
         },
         (error) => {
@@ -51,4 +56,6 @@ export class LoginComponent implements OnInit{
       );
     }
   }
+
+  
 }

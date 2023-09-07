@@ -16,4 +16,19 @@ export class AuthService {
   signup(user: any): Observable<any> {
     return this.http.post(`${this.apiBaseUrl}/register`, user);
   }
+
+  setUserData(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  // Retrieve user data from localStorage
+  getUserData(): any {
+    const userData = localStorage.getItem('user');
+    return userData ? JSON.parse(userData) : null;
+  }
+
+  // Clear user data from localStorage on logout
+  clearUserData() {
+    localStorage.removeItem('user');
+  }
 }
