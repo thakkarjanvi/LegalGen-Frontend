@@ -42,6 +42,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/login']);
         },
         (error) => {
+          alert("Signup Failed!");
           console.log('Signup failed:', error);
           // Handle the error, e.g., display an error message to the user
         }

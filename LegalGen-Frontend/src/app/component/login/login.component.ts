@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit{
         },
         (error) => {
          // Authentication failed
+         alert("Login Failed");
          console.error('Login failed');
          this.loginError = true;
         }

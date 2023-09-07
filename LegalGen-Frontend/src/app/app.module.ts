@@ -9,6 +9,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResearchpageComponent } from './component/researchpage/researchpage.component';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ResearchpageComponent } from './component/researchpage/researchpage.com
     LoginComponent,
     SignupComponent,
     ResearchpageComponent,
+    UpdateUserProfileComponent,
    
   ],
   imports: [
