@@ -5,11 +5,13 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ResearchpageComponent } from './component/researchpage/researchpage.component';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'signup', component: SignupComponent},
+  {path:'update-profile',component: UpdateUserProfileComponent}
 ];
 
 
