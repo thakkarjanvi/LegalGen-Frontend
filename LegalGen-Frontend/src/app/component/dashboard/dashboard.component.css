@@ -1,0 +1,229 @@
+.main-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  padding: 10px;
+  background-color: #0a004d;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar .list-view {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sidebar .list-view .queryList {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+.sidebar .list-view .queryList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.sidebar .list-view .queryList li small {
+  font-size: 14px;
+}
+
+.sidebar .footer {
+  height: 50px;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  color: white;
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar .footer .name-initials {
+  height: 30px;
+  width: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50%;
+  color: #0a004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .footer .user-name {
+  height: 30px;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.main-content img {
+  margin: 10px;
+}
+
+.main-content mat-form-field {
+  width: 400px;
+}
+
+.response-body{
+  display: flex;
+  width: 80%;
+}
+.response-body .response-content{
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.response-body .response-content::-webkit-scrollbar {
+  display: none;
+}
+.response-body .response-content .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.response-body .response-content .header img{
+  height: 50px;
+}
+
+.response-body .response-content .search-bar{
+  margin-top: 20px;
+}
+
+.response-body .response-content .search-bar mat-form-field{
+  width: 100%;
+}
+
+.response-body .response-content .search-bar mat-icon{
+  border: 5px solid #0a004d;
+  background-color: #0a004d;
+  border-radius: 10px;
+  color: white;
+  margin: 0;
+}
+
+
+.response-body .response-container .response-head{
+  height: auto;
+  padding: 10px;
+  background-color: #0a004d;
+  color: white;
+}
+
+.response-body .response-container .response-text{
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+
+.response-body .right-side-menus{
+  width: 250px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.response-body .right-side-menus mat-form-field{
+  width: 100%;
+}
+
+.response-body .right-side-menus .research-book{
+  height: 270px;
+  margin-top: 40px;
+  background-color: #f7f7f7;
+  color: #0a004d;
+  border-radius: 10px;
+  padding: 20px;
+}
+.response-body .right-side-menus .research-book .research-book-list{
+  height: 50%;
+  overflow-y: scroll;
+  padding: 10px 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.response-body .right-side-menus .research-book .research-book-list::-webkit-scrollbar {
+  display: none;
+}
+
+.response-body .right-side-menus .research-book .research-book-list li{
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 10px;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.response-body .right-side-menus .relavent-judgement{
+  height: 270px;
+  margin-top: 5px;
+  background-color: #f7f7f7;
+  color: #0a004d;
+  border-radius: 10px;
+  padding: 20px;
+}
+.response-body .right-side-menus .relavent-judgement .research-book-list{
+  height: 50%;
+  overflow-y: scroll;
+  padding: 10px 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.response-body .right-side-menus .relavent-judgement .research-book-list::-webkit-scrollbar {
+  display: none;
+}
+
+.response-body .right-side-menus .relavent-judgement .research-book-list li{
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 10px;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.btn-sidebar {
+  background-color: transparent; /* Make the button transparent */
+  border: 1px solid white;
+  border-radius: 3px;
+  width: 100%;
+  opacity: 0.8;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  outline: none;
+}
+
+
