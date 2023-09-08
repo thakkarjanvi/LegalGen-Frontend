@@ -4,8 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResearchpageComponent } from './component/researchpage/researchpage.component';
 import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 import { AdvancefilterComponent } from './component/advancefilter/advancefilter.component';
+import { UpdatePasswordComponent } from './component/update-password/update-password.component';
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import { AdvancefilterComponent } from './component/advancefilter/advancefilter.
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
     ResearchpageComponent,
     UpdateUserProfileComponent,
 
     AdvancefilterComponent,
+      UpdatePasswordComponent,
    
 
   ],

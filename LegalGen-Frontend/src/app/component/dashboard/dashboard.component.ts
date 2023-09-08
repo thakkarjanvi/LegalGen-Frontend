@@ -1,4 +1,4 @@
-import { ResearchBookService } from './../../service/research-book.service';
+import { ResearchBookService } from './../../Service/research-book.service';
 import { Component } from '@angular/core';
 import { Researchbook } from 'src/app/modal/research-book.dto';
 

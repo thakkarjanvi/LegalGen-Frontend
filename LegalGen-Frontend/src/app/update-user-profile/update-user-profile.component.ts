@@ -71,10 +71,11 @@ export class UpdateUserProfileComponent implements OnInit {
           console.log('Profile updated successfully:', response);
 
           // After successful update, navigate back to the user's profile or any other appropriate page
-          this.router.navigate(['/']); // Replace with the appropriate route
+          this.router.navigate(['/dashboard']); // Replace with the appropriate route
         },
         (error) => {
           // Handle any errors, e.g., show an error message
+          this.router.navigate(['/dashboard']); // Replace with the appropriate route
           console.error(error);
         }
       );

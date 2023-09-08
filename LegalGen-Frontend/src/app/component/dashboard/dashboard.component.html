@@ -1,23 +1,31 @@
 <div class="main-container">
   <div class="sidebar">
     <div class="head">
-      <button class="btn-sidebar" (click)="showNewQuery()">➕ New search</button>
+      <button class="btn-sidebar" (click)="showNewQuery()">
+        ➕ New search
+      </button>
     </div>
     <div class="list-view">
       <ul class="queryList">
         <li class="list-item" *ngFor="let item of researchBookList">
-            <div class="list-icon">📂</div>
-            <div class="list-title">
-              <p>{{ item.name }}</p>
-              <small>{{ item.dateCreated }}</small>
+          <div class="list-icon">📂</div>
+          <div class="list-title">
+            <p>{{ item.name }}</p>
+            <small>{{ item.dateCreated }}</small>
           </div>
         </li>
-
       </ul>
     </div>
     <div class="footer">
-      <div class="name-initials">CS</div>
-      <div class="user-name">Chintan shah</div>
+      <div class="name-initials">JT</div>
+      <div class="user-name">Janvi Thakkar</div>
+      <div class="logout-icon">
+        <span class="fa-solid fa-right-from-bracket" [routerLink]="['/']">Log out</span>
+      </div>
+    </div>
+    <div class="footer-btns">
+      <button class="btn-1" [routerLink]="['/update-profile']">Update user </button>
+      <button class="btn-2" [routerLink]="['/update-password']">Update password </button>
     </div>
   </div>
 
@@ -39,7 +47,7 @@
     <div class="response-content">
       <div class="header">
         <img src="../../../assets/image/logo2.PNG" />
-        <p>Advanced Filters | clear</p>
+        <p [routerLink]="['/advancefilter']">Advanced Filters | clear</p>
       </div>
       <div class="search-bar">
         <mat-form-field appearance="outline">
@@ -53,10 +61,14 @@
       </div>
       <div class="response-container">
         <div class="response">
-          <div class="response-head">Lorem ipsum dolor sit amet.</div>
-          <div class="response-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur possimus maxime ex eveniet sint accusamus assumenda atque, ipsam odio iure excepturi magnam, eos adipisci eius est quas saepe laboriosam? Ut possimus necessitatibus incidunt at sapiente est quas aperiam aliquid nobis.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem saepe in, ullam aperiam repellat neque. Voluptatem itaque labore exercitationem ut tenetur maiores aspernatur delectus obcaecati ab! Odit aliquam laboriosam soluta aliquid adipisci voluptates mollitia quam. Illo explicabo ullam possimus doloremque.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum, at quaerat incidunt nulla dolor consequuntur aspernatur qui consequatur quibusdam, impedit unde explicabo, harum provident. Numquam, ab rem aliquid eius iste, est quisquam animi impedit velit, tempora aut excepturi at?
+          <div class="response-head">Database design</div>
+          <div class="response-text">
+            Designing a database involves creating a structured plan for how
+            data will be stored, organized, and accessed within a database
+            management system (DBMS). A well-designed database ensures data
+            integrity, efficiency, and the ability to meet the requirements of
+            the application it supports. Below are some key steps and principles
+            for designing a database:
           </div>
         </div>
       </div>
@@ -64,11 +76,9 @@
 
     <div class="right-side-menus">
       <div class="research-book">
-        <p> Research Book</p>
+        <p>Research Book</p>
         <mat-form-field appearance="outline">
-          <input
-            matInput
-          />
+          <input matInput />
           <mat-icon matSuffix (click)="showQueryResponse()">pencil</mat-icon>
         </mat-form-field>
 
@@ -77,18 +87,13 @@
         </ul>
       </div>
       <div class="relavent-judgement">
-        <p> Relavent Judgement</p>
-        <mat-form-field appearance="outline">
-          <input
-          />
-          <mat-icon matSuffix (click)="showQueryResponse()">pencil</mat-icon>
-        </mat-form-field>
+        <p>Relavent Judgement</p>
 
         <ul class="research-book-list">
-          <li>1111111111111</li>
-          <li>1111111111111</li>
-          <li>1111111111111</li>
-          <li>1111111111111</li>
+          <li>Entity-Relationship Diagrams (ERD) Design</li>
+          <li>Normalization Techniques in Database Design</li>
+          <li>SQL Database Design Best Practices</li>
+          <li>Indexing Strategies for Database Performance</li>
         </ul>
       </div>
     </div>

@@ -23,15 +23,26 @@ export class ResearchpageComponent implements OnInit {
      private userService: UserService)
      {
       this.researchForm = this.fb.group({
-        title: ['', [Validators.required, Validators.email]],
+        name: ['', [Validators.required, Validators.email]],
       });
     }
 
   ngOnInit(): void {
     // Fetch user data and queries when the component initializes
     this.userName = this.userService.getUserName();
-    this.queries = this.researchService.getQueries();
+    // Subscribe to the observable to get the queries
+    this.researchService.getQueries().subscribe(
+      (queries: any[]) => {
+        this.queries = queries;
+        console.log('Fetched all queries', this.queries);
+      },
+      (error) => {
+        console.error('Error fetching queries', error);
+      }
+    );
   }
+
+
 
   openFormCard(): void {
     this.isFormCardOpen = true;
@@ -42,16 +53,17 @@ export class ResearchpageComponent implements OnInit {
   }
 
   createResearchBook(): void {
-
+  debugger
     const bookData = this.researchForm.value;
-   
+     console.log(bookData);
+     
     this.researchService.createResearchBook(bookData).subscribe(
       (response) => {
         // Authentication successful
         console.log('Create researchBook Successfull');
         
         alert("Create researchBook Successfull");
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       },
       (error) => {
        // Authentication failed
@@ -62,6 +74,44 @@ export class ResearchpageComponent implements OnInit {
       
     this.closeFormCard();
   }
+
+  // Inside your component
+editResearchBook(bookId: number, updatedData: any): void {
+  this.researchService.editResearchBook(bookId, updatedData).subscribe(
+    (response) => {
+      // Update was successful
+      console.log('Edit researchBook Successful');
+      alert('Edit researchBook Successful');
+      // Optionally, you can handle the response data here if needed.
+    },
+    (error) => {
+      // Edit failed
+      alert('Edit researchBook Failed');
+      console.error('Edit researchBook failed');
+    }
+  );
+}
+
+// Inside your component
+deleteResearchBook(bookId: number): void {
+  if (confirm('Are you sure you want to delete this research book?')) {
+    this.researchService.deleteResearchBook(bookId).subscribe(
+      (response) => {
+        // Deletion was successful
+        console.log('Delete researchBook Successful');
+        alert('Delete researchBook Successful');
+        // Optionally, you can handle the response data here if needed.
+      },
+      (error) => {
+        // Deletion failed
+        alert('Delete researchBook Failed');
+        console.error('Delete researchBook failed');
+      }
+    );
+  }
+}
+
+
 
   navigateToHome(): void {
     this.router.navigate(['/home']);
