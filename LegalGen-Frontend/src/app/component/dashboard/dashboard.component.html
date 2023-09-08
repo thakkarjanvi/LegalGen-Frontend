@@ -1,0 +1,96 @@
+<div class="main-container">
+  <div class="sidebar">
+    <div class="head">
+      <button class="btn-sidebar" (click)="showNewQuery()">➕ New search</button>
+    </div>
+    <div class="list-view">
+      <ul class="queryList">
+        <li class="list-item" *ngFor="let item of researchBookList">
+            <div class="list-icon">📂</div>
+            <div class="list-title">
+              <p>{{ item.name }}</p>
+              <small>{{ item.dateCreated }}</small>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="name-initials">CS</div>
+      <div class="user-name">Chintan shah</div>
+    </div>
+  </div>
+
+  <div class="main-content" *ngIf="newQuery">
+    <img src="../../../assets/image/logo2.PNG" />
+    <div class="search-bar-container">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Tell us about your query."
+          [(ngModel)]="query"
+        />
+        <mat-icon matSuffix (click)="showQueryResponse()">search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="response-body" *ngIf="showResponse">
+    <div class="response-content">
+      <div class="header">
+        <img src="../../../assets/image/logo2.PNG" />
+        <p>Advanced Filters | clear</p>
+      </div>
+      <div class="search-bar">
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            placeholder="Tell us about your query."
+            [(ngModel)]="query"
+          />
+          <mat-icon matSuffix (click)="showQueryResponse()">search</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="response-container">
+        <div class="response">
+          <div class="response-head">Lorem ipsum dolor sit amet.</div>
+          <div class="response-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur possimus maxime ex eveniet sint accusamus assumenda atque, ipsam odio iure excepturi magnam, eos adipisci eius est quas saepe laboriosam? Ut possimus necessitatibus incidunt at sapiente est quas aperiam aliquid nobis.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem saepe in, ullam aperiam repellat neque. Voluptatem itaque labore exercitationem ut tenetur maiores aspernatur delectus obcaecati ab! Odit aliquam laboriosam soluta aliquid adipisci voluptates mollitia quam. Illo explicabo ullam possimus doloremque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum, at quaerat incidunt nulla dolor consequuntur aspernatur qui consequatur quibusdam, impedit unde explicabo, harum provident. Numquam, ab rem aliquid eius iste, est quisquam animi impedit velit, tempora aut excepturi at?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side-menus">
+      <div class="research-book">
+        <p> Research Book</p>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+          />
+          <mat-icon matSuffix (click)="showQueryResponse()">pencil</mat-icon>
+        </mat-form-field>
+
+        <ul class="research-book-list">
+          <li *ngFor="let item of researchBookList">{{ item.name }}</li>
+        </ul>
+      </div>
+      <div class="relavent-judgement">
+        <p> Relavent Judgement</p>
+        <mat-form-field appearance="outline">
+          <input
+          />
+          <mat-icon matSuffix (click)="showQueryResponse()">pencil</mat-icon>
+        </mat-form-field>
+
+        <ul class="research-book-list">
+          <li>1111111111111</li>
+          <li>1111111111111</li>
+          <li>1111111111111</li>
+          <li>1111111111111</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
