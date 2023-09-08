@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit{
           this.authService.setUserData(response);
 
         //  alert("Login Succesful!");
-          this.router.navigate(['/']);
+          this.router.navigate(['/researchpage']);
         },
         (error) => {
          // Authentication failed
