@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ResearchpageComponent } from './component/researchpage/researchpage.component';
 import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
+import { AdvancefilterComponent } from './component/advancefilter/advancefilter.component';
 
 
 @NgModule({
@@ -27,6 +28,10 @@ import { UpdateUserProfileComponent } from './update-user-profile/update-user-pr
     DashboardComponent
     ResearchpageComponent,
     UpdateUserProfileComponent,
+
+    AdvancefilterComponent,
+   
+
   ],
   imports: [
     BrowserModule,

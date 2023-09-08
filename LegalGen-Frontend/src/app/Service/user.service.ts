@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private apiBaseUrl = 'https://localhost:7183/LegelGen/User'; // Replace with your JSON Server URL
-
+  private userName: string = '';
   constructor(private http: HttpClient) {}
 
   updateUserProfile(userData: any): Observable<any> {
@@ -22,6 +22,14 @@ export class UserService {
 
     // Make an HTTP GET request to fetch user data by email
     return this.http.get(getUrl);
+  }
+
+  getUserName(): string {
+    return this.userName;
+  }
+
+  setUserName(userName: string): void {
+    this.userName = userName;
   }
 
 }

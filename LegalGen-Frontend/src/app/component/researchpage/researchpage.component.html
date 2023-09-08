@@ -1,1 +1,69 @@
-<p>researchpage works!</p>
+
+<header class="custom-header">
+    <div class="custom-logo">
+      <img src="../../../assets/image/" alt="Custom Logo" class="custom-logo-img">
+    </div>
+    <div class="custom-profile">
+      <div class="custom-user-image">
+        <span class="custom-user-initial">{{ userName.charAt(0) }}</span>
+      </div>
+      <div class="custom-dropdown">
+        <span class="custom-user-name">{{ userName }}</span>
+        <span class="custom-dropdown-icon">▼</span>
+        <div class="custom-dropdown-content">
+          <button class="custom-button" (click)="navigateToUpdateProfile()">Update Profile</button>
+          <button class="custom-button" (click)="navigateToChangePassword()">Change Password</button>
+          <button class="custom-button" (click)="logout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="custom-card-container">
+    <div class="custom-card" (click)="openFormCard()">
+      <i class="custom-card-icon fas fa-plus fa-2x mb-3"></i>
+      <p class="custom-card-text">New Query</p>
+    </div>
+    <div class="custom-card" *ngFor="let query of queries" (click)="navigateToHome()">
+      <div class="custom-card-body">
+        <div class="custom-card-icon">
+          <i class="fas fa-folder fa-lg" style="color: #fccc77;"></i>
+        </div>
+        <h4 class="custom-card-title">{{ query.name }}</h4>
+        <div class="custom-card-row">
+          <div class="custom-card-date">
+            <small>{{ query.dateCreated | date }}</small>
+          </div>
+          <div class="custom-card-arrow">
+            <img src="../../../assets/arrow-up-right.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="custom-modal" *ngIf="isFormCardOpen">
+    <div class="custom-modal-dialog">
+      <form [formGroup]="researchForm" (submit)="createResearchBook()" #queryForm="ngForm">
+        <div class="custom-modal-content" [@customModalAnimation]>
+          <div class="custom-modal-header">
+            <h2 class="custom-modal-title">Research Name</h2>
+          </div>
+          <div class="custom-modal-body">
+            <textarea
+            formControlName="title"
+              [(ngModel)]="newQuery"
+              name="query"
+              placeholder="Enter your query"
+              class="custom-textarea"
+              required
+            ></textarea>
+            <br>
+            <button class="custom-button" type="submit">Continue</button>
+            <button class="custom-button" (click)="closeFormCard()">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

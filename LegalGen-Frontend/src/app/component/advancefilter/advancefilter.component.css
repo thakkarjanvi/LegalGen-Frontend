@@ -1,0 +1,116 @@
+/* Styling for the filter container */
+.filter-container {
+    display: grid;
+    background-color: #f0f0f0; /* Adjust background color as desired */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px; /* Adjust the maximum width of the form container as desired */
+    margin: 0 auto;
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  }
+  
+  /* Styling for each filter column */
+  .filter-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling for labels */
+  .filter-label {
+    margin-bottom: 5px;
+    font-weight: bold; /* Make labels bold */
+  }
+  
+  /* Styling for dropdowns */
+  .custom-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Styling for dropdown buttons */
+  .custom-dropdown-button {
+    display: flex;
+    margin-left: 10px;
+    background-color: #e0e0e0; /* Adjust button background color */
+    border: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 400px;
+  }
+  
+  /* Styling for dropdown content */
+  .custom-dropdown-content {
+    position: relative;
+    left: 0;
+    background-color: #f5f5f5; /* Adjust dropdown background color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    display: none;
+  }
+  
+  /* Styling for dropdown links */
+  .custom-dropdown-content a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Show dropdown content on hover */
+  .custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+  }
+  
+  /* Styling for section titles */
+  .custom-section-title {
+    display: relative;
+    margin-left: 352px; /* Adjust the margin as desired */
+  }
+  
+  /* Styling for the "Advanced Filters" title */
+  .custom-title {
+    display: relative;
+    margin-left: 0px;
+  }
+  
+  /* Styling for the button group */
+  .button-group {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    margin-top: 10px;
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
+  
+  /* Styling for the reset button */
+  .custom-reset-button {
+    background-color: #767a78;
+    border: none;
+    color: #fff; /* Text color changed to white */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  /* Styling for the submit button */
+  .custom-submit-button {
+    background-color: #21be5d;
+    border: none;
+    color: #fff; /* Text color changed to white */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 200px;
+  }
+  
+  /* Hover effect for buttons */
+  .custom-submit-button:hover,
+  .custom-reset-button:hover {
+    background-color: #aaa; /* Adjust the hover background color */
+  }
