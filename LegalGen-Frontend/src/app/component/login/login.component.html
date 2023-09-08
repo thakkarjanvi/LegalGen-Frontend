@@ -1,1 +1,24 @@
-<p>login works!</p>
+<!-- <p>login works!</p> -->
+
+<div class="login">
+    <div class="main">
+      <img src="../../../assets/image/logo(login).PNG" alt="">
+      <h3>Welcome Back</h3>
+      <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <input type="email" placeholder="Enter Email-address" formControlName="email">
+        <small *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" style="color: red;">*Email-address is required</small>
+        <small *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" style="color: red;">*Invalid email format</small>
+  
+        <input type="password" placeholder="Password" formControlName="password">
+            <small *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" style="color: red;">*Password is required</small>
+            <small *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" style="color: red;">*Password must be at least 6 characters long</small>
+  
+        <p>Forgot Password ?</p>
+        <button type="submit">Log in</button>
+        <p>Don't have an account? <span><a href="/signup">Sign up</a></span></p>
+        
+      </form>
+    </div>
+    <p>Terms of use | Privacy Policy</p>
+  </div>
+  
