@@ -8,14 +8,13 @@ import { Researchbook } from '../modal/research-book.dto';
 })
 export class ResearchBookService {
 
-  baseURL = 'https://localhost:44370'
+  baseURL = 'https://localhost:7183/LegelGen/ResearchBooks'
 
   constructor(
     private httpService: HttpClient
   ) { }
 
   getResearchBook(): Observable<Researchbook[]>{
-    const apiURL = 'api/ResearchBooks'
-    return this.httpService.get<Researchbook[]>(`${this.baseURL}/${apiURL}`)
+    return this.httpService.get<Researchbook[]>(`${this.baseURL}`)
   }
 }

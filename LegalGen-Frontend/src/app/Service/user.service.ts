@@ -32,4 +32,10 @@ export class UserService {
     this.userName = userName;
   }
 
+  updateUserPassword(userData: any): Observable<any> {
+    const updateUrl = `${this.apiBaseUrl}/update-password`; // Replace with your actual update profile API endpoint
+    // Make an HTTP PUT request to update the user's profile
+    return this.http.post(updateUrl, userData);
+  }
+
 }

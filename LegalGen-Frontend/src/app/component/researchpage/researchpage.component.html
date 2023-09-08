@@ -1,19 +1,20 @@
 
 <header class="custom-header">
     <div class="custom-logo">
-      <img src="../../../assets/image/" alt="Custom Logo" class="custom-logo-img">
+      <img src="../../../assets/image/logo2.PNG" alt="Custom Logo" class="custom-logo-img">
     </div>
     <div class="custom-profile">
       <div class="custom-user-image">
+        <img src="../../../assets/image/logo(login).PNG">
         <span class="custom-user-initial">{{ userName.charAt(0) }}</span>
       </div>
       <div class="custom-dropdown">
         <span class="custom-user-name">{{ userName }}</span>
         <span class="custom-dropdown-icon">▼</span>
         <div class="custom-dropdown-content">
-          <button class="custom-button" (click)="navigateToUpdateProfile()">Update Profile</button>
-          <button class="custom-button" (click)="navigateToChangePassword()">Change Password</button>
-          <button class="custom-button" (click)="logout()">Sign Out</button>
+          <button class="custom-button" [routerLink]="['/update-profile']">Update Profile</button>
+          <button class="custom-button" [routerLink]="['/update-password']">Change Password</button>
+          <button class="custom-button" [routerLink]="['/']">Sign Out</button>
         </div>
       </div>
     </div>
@@ -22,25 +23,26 @@
   <div class="custom-card-container">
     <div class="custom-card" (click)="openFormCard()">
       <i class="custom-card-icon fas fa-plus fa-2x mb-3"></i>
-      <p class="custom-card-text">New Query</p>
+      <p class="custom-card-text"> New Query</p>
     </div>
-    <div class="custom-card" *ngFor="let query of queries" (click)="navigateToHome()">
-      <div class="custom-card-body">
-        <div class="custom-card-icon">
-          <i class="fas fa-folder fa-lg" style="color: #fccc77;"></i>
-        </div>
-        <h4 class="custom-card-title">{{ query.name }}</h4>
-        <div class="custom-card-row">
-          <div class="custom-card-date">
-            <small>{{ query.dateCreated | date }}</small>
+    <a *ngFor="let query of queries" [routerLink]="['/dashboard']" class="a-tag">
+      <!-- Wrap the card content in an <a> tag -->
+      <div class="custom-card">
+        <div class="custom-card-body">
+          <div class="custom-card-icon">
+            <i class="fas fa-folder fa-lg" style="color: #fccc77;"></i>
           </div>
-          <div class="custom-card-arrow">
-            <img src="../../../assets/arrow-up-right.svg" />
+          <h4 class="custom-card-title">{{ query.name }}</h4>
+          <div class="custom-card-row">
+            <div class="custom-card-date">
+              <small>{{ query.dateCreated | date }}</small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
+  
   
   <div class="custom-modal" *ngIf="isFormCardOpen">
     <div class="custom-modal-dialog">
@@ -51,7 +53,7 @@
           </div>
           <div class="custom-modal-body">
             <textarea
-            formControlName="title"
+            formControlName="name"
               [(ngModel)]="newQuery"
               name="query"
               placeholder="Enter your query"
@@ -59,7 +61,7 @@
               required
             ></textarea>
             <br>
-            <button class="custom-button" type="submit">Continue</button>
+            <button class="custom-button" type="submit">Continue <a [routerLink]="['/dashboard']"></a></button>
             <button class="custom-button" (click)="closeFormCard()">Close</button>
           </div>
         </div>

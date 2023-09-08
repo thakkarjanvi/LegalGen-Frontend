@@ -13,6 +13,62 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Style for buttons container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Style for buttons in the top section */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Style for buttons in the bottom section */
+.bottom-buttons {
+  margin-left: 1px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex; /* Use flexbox to arrange buttons horizontally */
+  justify-content: space-between; /* Add space between buttons */
+  margin: 10px; /* Add margin to the container (adjust as needed) */
+}
+.custom-button {
+  padding: 10px 20px; /* Add padding to buttons (adjust as needed) */
+  background-color: #007bff; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  /* You can add more styling here as per your design */
+}
+.custom-button:hover {
+  background-color: #0056b3; /* Example hover background color */
+}
+
+/* Style for buttons */
+.footer-button {
+  background-color: #3498db;
+  width: 100px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for buttons on hover */
+.footer-button:hover {
+  background-color: #2980b9;
+}
+
 .sidebar .list-view {
   flex: 1;
   overflow-y: auto;
@@ -39,12 +95,32 @@
 }
 
 .sidebar .footer {
-  height: 50px;
+  height: 60px;
   border-top: 1px solid #ccc;
   padding: 10px;
   color: white;
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+.sidebar .footer-btns {
+  height: 80px;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sidebar .footer-btns button {
+  width: 100%;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+.sidebar .footer-btns .btn-1, .btn-2 {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
 .sidebar .footer .name-initials {
@@ -84,11 +160,11 @@
   width: 400px;
 }
 
-.response-body{
+.response-body {
   display: flex;
   width: 80%;
 }
-.response-body .response-content{
+.response-body .response-content {
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
@@ -107,19 +183,19 @@
   align-items: center;
 }
 
-.response-body .response-content .header img{
+.response-body .response-content .header img {
   height: 50px;
 }
 
-.response-body .response-content .search-bar{
+.response-body .response-content .search-bar {
   margin-top: 20px;
 }
 
-.response-body .response-content .search-bar mat-form-field{
+.response-body .response-content .search-bar mat-form-field {
   width: 100%;
 }
 
-.response-body .response-content .search-bar mat-icon{
+.response-body .response-content .search-bar mat-icon {
   border: 5px solid #0a004d;
   background-color: #0a004d;
   border-radius: 10px;
@@ -127,33 +203,32 @@
   margin: 0;
 }
 
-
-.response-body .response-container .response-head{
+.response-body .response-container .response-head {
   height: auto;
   padding: 10px;
   background-color: #0a004d;
   color: white;
 }
 
-.response-body .response-container .response-text{
+.response-body .response-container .response-text {
   margin-bottom: 20px;
   width: 100%;
   padding: 10px;
   background-color: #f7f7f7;
 }
 
-.response-body .right-side-menus{
+.response-body .right-side-menus {
   width: 250px;
   margin-right: 30px;
   display: flex;
   flex-direction: column;
 }
 
-.response-body .right-side-menus mat-form-field{
+.response-body .right-side-menus mat-form-field {
   width: 100%;
 }
 
-.response-body .right-side-menus .research-book{
+.response-body .right-side-menus .research-book {
   height: 270px;
   margin-top: 40px;
   background-color: #f7f7f7;
@@ -161,7 +236,7 @@
   border-radius: 10px;
   padding: 20px;
 }
-.response-body .right-side-menus .research-book .research-book-list{
+.response-body .right-side-menus .research-book .research-book-list {
   height: 50%;
   overflow-y: scroll;
   padding: 10px 5px;
@@ -169,11 +244,14 @@
   scrollbar-width: none;
 }
 
-.response-body .right-side-menus .research-book .research-book-list::-webkit-scrollbar {
+.response-body
+  .right-side-menus
+  .research-book
+  .research-book-list::-webkit-scrollbar {
   display: none;
 }
 
-.response-body .right-side-menus .research-book .research-book-list li{
+.response-body .right-side-menus .research-book .research-book-list li {
   padding: 10px 15px;
   background-color: white;
   border-radius: 10px;
@@ -181,7 +259,7 @@
   border-bottom: 1px solid #ccc;
 }
 
-.response-body .right-side-menus .relavent-judgement{
+.response-body .right-side-menus .relavent-judgement {
   height: 270px;
   margin-top: 5px;
   background-color: #f7f7f7;
@@ -189,7 +267,7 @@
   border-radius: 10px;
   padding: 20px;
 }
-.response-body .right-side-menus .relavent-judgement .research-book-list{
+.response-body .right-side-menus .relavent-judgement .research-book-list {
   height: 50%;
   overflow-y: scroll;
   padding: 10px 5px;
@@ -197,18 +275,20 @@
   scrollbar-width: none;
 }
 
-.response-body .right-side-menus .relavent-judgement .research-book-list::-webkit-scrollbar {
+.response-body
+  .right-side-menus
+  .relavent-judgement
+  .research-book-list::-webkit-scrollbar {
   display: none;
 }
 
-.response-body .right-side-menus .relavent-judgement .research-book-list li{
+.response-body .right-side-menus .relavent-judgement .research-book-list li {
   padding: 10px 15px;
   background-color: white;
   border-radius: 10px;
   list-style: none;
   border-bottom: 1px solid #ccc;
 }
-
 
 .btn-sidebar {
   background-color: transparent; /* Make the button transparent */
@@ -225,5 +305,3 @@
   color: white;
   outline: none;
 }
-
-
